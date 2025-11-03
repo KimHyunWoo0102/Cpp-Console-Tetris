@@ -18,12 +18,15 @@
     <ClInclude Include="includes\Board.h">
       <Filter>헤더 파일</Filter>
     </ClInclude>
+    <ClInclude Include="includes\Block.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="includes\Board.cpp">
+    <ClCompile Include="src\Board.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
-    <ClCompile Include="includes\main.cpp">
+    <ClCompile Include="src\main.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
   </ItemGroup>

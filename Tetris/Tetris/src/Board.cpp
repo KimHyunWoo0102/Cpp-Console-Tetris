@@ -1,5 +1,6 @@
 #include "Board.h"
 
+
 Board::Board(int height, int width)
 	:height(height),width(width)
 {
