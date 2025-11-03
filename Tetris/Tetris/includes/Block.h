@@ -73,20 +73,24 @@ public:
     Block() : type(BlockType::I), rotation(0), pos{ 0, 0 }
     {}
 
-    void SpwanNewBlock(BlockType newType, Pos startPos) {
+    void SpawnNewBlock(BlockType newType, Pos startPos) {
         this->type = newType;
         this->pos = startPos;
         this->rotation = 0;
     }
 
-    int GetX() const;
-    int GetY() const;
-    const bool* GetShape()const;
+    int GetX() const { return this->pos.x; }
+    int GetY() const { return this->pos.y; }
+    auto GetShape() const -> const bool(&)[4][4]
+    { 
+        int _type = static_cast<int>(this->type);
+        return BLOCK_TEMPLATES[_type][this->rotation];
+    }
 
-    void MoveDown();
-    void MoveRight();
-    void MoveLeft();
-    void Rotate();
+    void MoveDown() { this->pos.y++; }
+    void MoveRight() { this->pos.x++; }
+    void MoveLeft() { this->pos.x--; }
+    void Rotate() { this->rotation = (this->rotation + 1) % 4; }
 
 private:
     BlockType type;
